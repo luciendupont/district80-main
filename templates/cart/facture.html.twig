@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            {{ commande.id }}
+
+            {% set total = null %}
+            {% for detail in commande.details %}
+                {% for plat in plats %}
+                { {% set total = detail.quantite * plat.prix %}     }
+                    <div>
+                        {{ plat.libelle }} {{ plat.prix }} {{ detail.quantite }} {{total}}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+                <pre>
+                    {{(user.adresse) }}
+                </pre>
+            
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

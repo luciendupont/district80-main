@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        {% for plat in cat.plats %}
+        <div class="col-4">
+            <div class="card border-dark mb-3">
+                <div class="card-header">{{plat.libelle}}</div>
+                <div class="card-body">
+                    <img src="/images_the_district/food/{{plat.image}}" width="200">
+                    <h4 class="card-title">
+                    <a href="{{path('app_detailplat',{plat:plat.id})}}" class="btn btn-dark mt-4">detail</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}restaurant le district{% endblock %}
+
+{% block body %}
+
+
+
+<div class="container " id="fond">
+    <div class="row mt-4 ">
+
+
+        {{ form_start(form) }}
+        <div class="row align-self-center">
+            <div class="col-8 col-md-10">{{ form_widget(form.recherche, {'attr': {'placeholder': 'Recherche', 'class':
+                'mt-4'}}) }}</div>
+            <div class="col-2"> {{ form_widget(form.submit) }}</div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% block article %}
+
+
+<ul><h1>
+    Bienvenue au restaurant "Le Discrit" ! Nous sommes fiers de vous proposer une cuisine traditionnelle de qualité, préparée avec des ingrédients frais et locaux.
+
+    Dans les catégories, nous vous suggérons notre délicieuse burger,pizza,pates,sandwich,wrap et  autres.
+    Pour les plats , nous vous recommandons notre succulent  plat,pizza,burger.
+    "Le Discrit" inoubliable.</h1></ul>
+
+<div class="container">
+    <div class="row">            
+        {% for cat in cats %}  
+      
+
+
+            <div class="col-lg-4 my-2 d-flex justify-content-center">   
+        <div class="card mb-3">
+
+ 
+            <div class="card-header">{{cat.libelle}}</div>
+            <div class="card-body">
+                <img src="images_the_district/category/{{cat.image}}" width="200">
+                <h4 class="card-title">
+                    <p class="card-text"></p>
+                    <a href="{{path("app_categorie")}}" class="btn btn-dark">voir les catégories</a>
+            </div></div></div>
+            {% endfor %}
+        </div>
+
+        <div class="container">
+            <div class="row">           
+                {% for plat in plats %}  
+              
+        
+        
+                    <div class="col-lg-4 my-2 d-flex justify-content-center">   
+                <div class="card mb-3">
+        
+         
+                    <div class="card-header">{{plat.libelle}}</div>
+                    <div class="card-body">
+                        <img src="images_the_district/food/{{plat.image}}" width="200">
+                        <h4 class="card-title">
+                            <p class="card-text"></p>
+                            <a href="{{path("app_plat")}}" class="btn btn-dark">voir les plats</a>
+                    </div></div></div>
+                    {% endfor %}
+                </div>
+
+    {% endblock %}
+    {% endblock %}

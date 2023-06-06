@@ -1,0 +1,10 @@
+#fond{
+    height: 10cm;
+    width: 20cm;
+    background-image: url(images_the_district/ibg.jpg);
+    
+}
+
+#block{
+    background-color: rgb(255, 255, 255);
+}

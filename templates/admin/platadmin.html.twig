@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+<div class="card border-dark mb-3" style="max-width: 20rem;">
+  <div class="card-header">espace admin </div>
+  <div class="card-body">
+    <p class="card-text">    <td><a href="{{path('app_nouveauplat')}}" class="btn btn-dark"> créer un plat</a></td>
+    </p>
+  </div>
+</div>
+
+
+
+
+
+<table class="table table-secondary">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">libelle</th>
+      <th scope="col">image</th>
+      <th scope="col">modifier</th>
+      <th scope="col">supprimer</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    {% for plat in plats %}
+        
+   
+<tr class="table-active">
+    <th scope="row">{{plat.id}}</th>
+    <td>{{plat.libelle}}</td>
+    <td>{{plat.image}}</td>
+    <td><a href="" class="btn btn-dark">modifier</a></td>
+    <td><a href="" class="btn btn-light">supprimer</a></td>
+
+  </tr>
+   {% endfor %}
+
+
+</tbody>
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}plat
+{% endblock %}
+
+{% block body %}
+
+{% block article %}
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="card border-dark mb-3 mt-4">
+                <div class="card-header">{{plat.libelle}}</div>
+                <div class="card-body">
+                    <img src="/images_the_district/food/{{plat.image}}" width="200">
+                    <h4 class="card-title">
+                        <p class="card-text">{{plat.description}}</p>
+                        <p class="card-text">{{plat.prix}}€</p>
+                        <a href="{{path('cart_add', {id:plat.id})}}" class="btn btn-dark">ajouter au panier</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% endblock %}

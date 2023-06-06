@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}accueil admin {% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="card-title">accueil adminstrateur</h1>
+
+    </div>
+  </div>
+</div>
+     
+
+
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col">
+      <div class="container"><p class="card-text"><a href="{{path("app_admincategorie")}}" class="btn btn-dark">gérer les  catégories</a></div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col">
+      <div class="container"><p class="card-text"><a href="{{path("app_adminplat")}}" class="btn btn-dark">gérer les plats</a></div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col">
+      <div class="container"><p class="card-text"><a href="{{path("app_adminuser")}}" class="btn btn-dark">gérer les utilisateur</a></div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col">
+      <div class="container"><p class="card-text"><a href="{{path('app_admincommande')}}" class="btn btn-dark">gérer les commandes</a></div>
+
+    </div>
+  </div>
+</div>
+
+    </p>
+    </div>
+  </div>
+
+{% endblock %}
